@@ -1,0 +1,180 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f9fafc;
+    color: #2c3e50;
+}
+
+/* Header */
+header {
+    background: #1e2a38;
+    color: white;
+    padding: 1.5em 1em;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 0.2em;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #00c4cc;
+    transition: width 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+/* Main content */
+main {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+/* Card style for sections */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 2em;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: none;
+}
+
+.card.active {
+    display: block;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #1e2a38;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background: #1e2a38;
+    color: white;
+    margin-top: 2em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Profile card */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5em;
+    border: 1px solid #ddd;
+    gap: 1em;
+    flex: 1;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00c4cc;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h3 {
+    margin: 0 0 0.5em 0;
+    color: #1e2a38;
+    font-weight: 600;
+}
+
+.status {
+    margin: 0 0 1em 0;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.profile-buttons {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.icon-link {
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.icon-link:hover {
+    opacity: 0.7;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* About section */
+.about-section {
+    flex: 1;
+}
+
+.about-section h3 {
+    margin-top: 0;
+    color: #1e2a38;
+    font-weight: 600;
+}
+
+.about-text {
+    line-height: 1.6;
+    color: #34495e;
+}
+
+/* Home content */
+.home-content {
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+}

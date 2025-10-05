@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCs</title>
+    <title>My ePortfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <a href="CC1_BERTAINA_Malcolm">CC1</a>
+    <header>
+        <h1>My ePortfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="tab-link active" data-tab="home">Home</a></li>
+                <li><a href="#" class="tab-link" data-tab="engineering">Engineering Courses</a></li>
+                <li><a href="#" class="tab-link" data-tab="mobility">Mobility</a></li>
+                <li><a href="#" class="tab-link" data-tab="civic">Civic Engagement</a></li>
+                <li><a href="#" class="tab-link" data-tab="sports">Sports & Activities</a></li>
+                <li><a href="#" class="tab-link" data-tab="career">Career Development</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="tab-content active card">
+            <div class="home-content">
+                <div class="profile-card">
+                    <img src="media/profile.jpg" class="profile-img">
+                    <div class="profile-info">
+                        <h3>Malcolm BERTAINA</h3>
+                        <p class="status">Digital Science student at ENSEEIHT</p>
+                        <div class="profile-buttons">
+                            <a href="https://www.linkedin.com/in/malcolm-bertaina/" class="icon-link"
+                                target="_blank"><img src="media/linkedin.svg" class="icon"></a>
+                            <a href="media/cv.pdf" class="icon-link" target="_blank"><img src="media/cv.svg" class="icon"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-section">
+                    <h3>About Me</h3>
+                    <p>I am Malcolm. After completing my Bachelor's degree in Computer Science at the University of New
+                        Caledonia,
+                        I am now studying at ENSEEIHT, a leading engineering school in Toulouse.</p>
+                    <p>My goal is to become a network and systems security engineer, 
+                        designing secure and efficient infrastructures while exploring new technologies.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="engineering" class="tab-content card">
+            <h2>Engineering Courses</h2>
+            <p>[Add description of your engineering or scientific project here]</p>
+        </section>
+
+        <section id="mobility" class="tab-content card">
+            <h2>Mobility</h2>
+            <p>[Write about your mobility experience or desired destinations here]</p>
+        </section>
+
+        <section id="civic" class="tab-content card">
+            <h2>Civic Engagement</h2>
+            <p>[Describe your civic engagement activities or plans here]</p>
+        </section>
+
+        <section id="sports" class="tab-content card">
+            <h2>Sports & Activities</h2>
+            <p>[Include your extracurricular activities here]</p>
+        </section>
+
+        <section id="career" class="tab-content card">
+            <h2>Career Development</h2>
+            <p>[Upload or describe your CV and career goals here]</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
