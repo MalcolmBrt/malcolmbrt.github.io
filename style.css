@@ -293,3 +293,15 @@ footer {
 .experience-card.right .date {
     left: -10px;
 }
+
+/* Mobility section with flag */
+.mobility-content {
+    position: relative;
+}
+
+.flag {
+    float: right;
+    width: 30%;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
