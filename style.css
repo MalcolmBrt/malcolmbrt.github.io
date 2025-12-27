@@ -458,3 +458,104 @@ footer {
         line-height: 1.5;
     }
 }
+/* --- PPP List Section Styles --- */
+
+.ppp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.ppp-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9fafc;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 1.2em 1.5em; /* Un peu plus de hauteur pour aérer vu qu'il n'y a plus d'icône */
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ppp-row:hover {
+    border-color: #00c4cc;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    /* Mouvement supprimé ici */
+}
+
+/* --- Generic Document List Styles --- */
+
+.doc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.doc-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9fafc;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 1.2em 1.5em;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doc-item:hover {
+    border-color: #00c4cc;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.doc-desc {
+    flex-grow: 1;
+    margin-right: 1.5em;
+    color: #34495e;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.doc-desc strong {
+    color: #1e2a38;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* Bouton View générique */
+.btn-view {
+    background-color: #1e2a38;
+    color: white;
+    padding: 0.6em 1.2em;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #00c4cc;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .doc-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+    }
+    
+    .doc-desc {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .btn-view {
+        align-self: flex-start;
+    }
+}
