@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/url';
+---
+
+<BaseLayout
+  title="Engagement Civique — Malcolm Bertaina"
+  description="Engagement citoyen, bénévolat événementiel et formation aux premiers secours de Malcolm Bertaina."
+>
+  <section class="section page-head">
+    <p class="eyebrow">Engagement & Citoyenneté</p>
+    <h1>Engagement Civique</h1>
+    <p class="lead">
+      Validation du module d'engagement citoyen de l'ENSEEIHT (29 heures d'implication réparties entre bénévolat événementiel et formation aux premiers secours).
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="doc-list" aria-label="Liste des actions d'engagement civique">
+      <article class="doc-card">
+        <div>
+          <p class="eyebrow">8 Heures</p>
+          <h3>Formation Premiers Secours Citoyen (PSC)</h3>
+          <p>Formation aux gestes d'urgence et à la prise en charge des personnes en situation de détresse ou de malaise.</p>
+        </div>
+        <div>
+          <a class="social-btn" href={withBase('/docs/psc-certificate.pdf')} target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <polyline points="9 15 12 18 15 15"/>
+            </svg>
+            <span>Attestation PDF</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="doc-card">
+        <div>
+          <p class="eyebrow">9 Heures</p>
+          <h3>Organisation du Raid INSA / INP</h3>
+          <p>Bénévolat lors de l'organisation du raid multisport étudiant (VTT, trail, orientation). Aide à la logistique et au suivi des épreuves.</p>
+        </div>
+      </article>
+
+      <article class="doc-card">
+        <div>
+          <p class="eyebrow">12 Heures</p>
+          <h3>Toulouse Hacking Convention (THCon)</h3>
+          <p>Bénévolat lors de la convention de cybersécurité toulousaine. Logistique, accueil des participants et assistance sur les espaces de conférences.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

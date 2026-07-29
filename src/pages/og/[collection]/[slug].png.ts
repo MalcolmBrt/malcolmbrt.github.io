@@ -17,23 +17,14 @@ interface OgProps {
 }
 
 export const getStaticPaths = (async () => {
-  const blog = await getCollection('blog', ({ data }) => !data.draft);
-  const works = await getCollection('works');
+  const projets = await getCollection('projets');
   return [
-    ...blog.map((entry) => ({
-      params: { collection: 'blog', slug: entry.id },
+    ...projets.map((entry) => ({
+      params: { collection: 'projets', slug: entry.id },
       props: {
         title: entry.data.title,
         description: entry.data.description,
-        kind: 'Blog',
-      } satisfies OgProps,
-    })),
-    ...works.map((entry) => ({
-      params: { collection: 'works', slug: entry.id },
-      props: {
-        title: entry.data.title,
-        description: entry.data.description,
-        kind: 'Work',
+        kind: 'Projet',
       } satisfies OgProps,
     })),
   ];

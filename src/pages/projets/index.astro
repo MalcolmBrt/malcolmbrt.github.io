@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/url';
+
+const works = (await getCollection('projets')).sort((a, b) => {
+  return b.data.publishDate.getTime() - a.data.publishDate.getTime();
+});
+---
+
+<BaseLayout title="Projets — Malcolm Bertaina" description="Projets et travaux d'ingénierie réalisés par Malcolm Bertaina.">
+  <section class="page-head section">
+    <p class="eyebrow">Projets & Réalisations</p>
+    <h1>Projets et travaux d'ingénierie.</h1>
+    <p class="lead">
+      Sélection de projets développés au cours de ma formation d'ingénieur en Sciences du Numérique à l'ENSEEIHT.
+    </p>
+  </section>
+
+  <section class="section" aria-label="Projets sélectionnés">
+    <div class="work-list">
+      {
+        works.map((work) => (
+          <article class="work-card">
+            <p class="entry-meta">{work.data.tech.join(' / ')}</p>
+            <h2><a href={withBase(`/projets/${work.id}/`)}>{work.data.title}</a></h2>
+            <p>{work.data.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

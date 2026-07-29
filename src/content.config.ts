@@ -4,8 +4,8 @@ import { z } from 'astro/zod';
 
 // Astro 7 Content Layer API: each collection declares a `loader`.
 // Authors add Markdown/MDX files under the `base` directories below.
-const works = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/works' }),
+const projets = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/projets' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -19,17 +19,4 @@ const works = defineCollection({
     }),
 });
 
-const blog = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      publishDate: z.coerce.date(),
-      tags: z.array(z.string()).default([]),
-      description: z.string(),
-      draft: z.boolean().default(false),
-      heroImage: image().optional(),
-    }),
-});
-
-export const collections = { works, blog };
+export const collections = { projets };

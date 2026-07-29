@@ -14,8 +14,8 @@
   --font-display: "Fraunces Variable", Georgia, serif;
   --font-body: "Public Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
-  --content-width: 1160px;
-  --prose-width: 68ch;
+  --content-width: 1280px;
+  --prose-width: 100%;
   --page-pad: clamp(1rem, 3vw, 2rem);
   --baseline: 1.5rem;
   --hairline: 1px solid var(--color-line);
@@ -228,18 +228,6 @@ a:not(.brand, .button):hover {
   animation: keel-enter 560ms ease both;
 }
 
-.hero > :nth-child(2) {
-  animation-delay: 90ms;
-}
-
-.hero > :nth-child(3) {
-  animation-delay: 180ms;
-}
-
-.hero > :nth-child(4) {
-  animation-delay: 270ms;
-}
-
 .section {
   padding-block: clamp(3.5rem, 5.5vw, 5.5rem);
 }
@@ -291,7 +279,6 @@ p {
 h1,
 h2,
 h3 {
-  max-width: 12.5ch;
   font-family: var(--font-display);
   font-variation-settings: "opsz" 72, "SOFT" 20, "WONK" 1;
   font-weight: 650;
@@ -354,6 +341,40 @@ p {
 .button:hover {
   border-color: var(--color-accent-hover);
   background: var(--color-accent-hover);
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding: 0.6rem 1.15rem;
+  border: var(--hairline);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.social-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-surface);
+  transform: translateY(-2px);
+}
+
+.social-btn svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .text-link {
@@ -469,12 +490,45 @@ pre code {
   list-style: none;
 }
 
-.entry-list,
-.work-list {
+.work-list,
+.doc-list {
   display: grid;
   gap: 1px;
   background: var(--color-line);
   border: var(--hairline);
+  margin-top: calc(var(--baseline) * 1.5);
+}
+
+.doc-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--color-bg);
+  align-items: center;
+  transition: background 180ms ease;
+}
+
+@media (min-width: 640px) {
+  .doc-card {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.doc-card:hover {
+  background: var(--color-surface);
+}
+
+.doc-card h3 {
+  max-width: 100%;
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.doc-card p {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
 }
 
 .entry-card,
@@ -493,7 +547,6 @@ pre code {
 
 .entry-card h2,
 .work-card h2 {
-  max-width: 15ch;
   font-size: clamp(1.85rem, 4vw, 3.75rem);
 }
 
@@ -502,6 +555,15 @@ pre code {
 .prose p,
 .prose li {
   color: var(--color-muted);
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: var(--hairline);
+  margin-block: 1.5rem;
+  display: block;
 }
 
 .entry-meta {

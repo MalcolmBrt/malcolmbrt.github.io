@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/url';
+
+const documents = [
+  {
+    title: 'PPP (Projet Personnel et Professionnel)',
+    description: 'Bilan et synthèses de mes objectifs professionnels, mes choix d\'orientations et mes compétences d\'ingénieur.',
+    href: '/docs/ppp.pdf',
+  },
+  {
+    title: 'Interview Mentor — Airbus',
+    description: 'Échange avec un ingénieur retraité spécialisé dans les systèmes embarqués chez Airbus.',
+    href: '/docs/interview-airbus.pdf',
+  },
+  {
+    title: 'Interview Mentor — VMware',
+    description: 'Discussion avec un consultant Cloud chez VMware autour des architectures virtuelles et d\'infrastructure.',
+    href: '/docs/interview-vmware.pdf',
+  },
+  {
+    title: 'Rapport de Projet Tutoré — OPT-NC',
+    description: 'Rapport de conception et réalisation de l\'interface d\'affichage des temps d\'attente en agence.',
+    href: '/docs/rapport-projet-tutore.pdf',
+  },
+  {
+    title: 'Rapport de Stage — OPT-NC',
+    description: 'Rapport de stage de fin d\'études sur l\'application de recherche des codes postaux.',
+    href: '/docs/rapport-stage-opt.pdf',
+  },
+];
+---
+
+<BaseLayout
+  title="Projet PPP — Malcolm Bertaina"
+  description="Projet Personnel et Professionnel de Malcolm Bertaina : interviews mentors, bilans et rapports d'ingénierie."
+>
+  <section class="section page-head">
+    <p class="eyebrow">Parcours & Orientation</p>
+    <h1>Projet PPP</h1>
+    <p class="lead">
+      Tout au long de mon parcours académique, j'ai affiné mon projet professionnel à travers des échanges avec des mentors du secteur et des travaux d'ingénierie.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="doc-list" aria-label="Documents du projet PPP">
+      {documents.map((doc) => (
+        <article class="doc-card">
+          <div>
+            <h3>{doc.title}</h3>
+            <p>{doc.description}</p>
+          </div>
+          <div>
+            <a class="social-btn" href={withBase(doc.href)} target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="12" y1="18" x2="12" y2="12"/>
+                <polyline points="9 15 12 18 15 15"/>
+              </svg>
+              <span>Consulter</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
